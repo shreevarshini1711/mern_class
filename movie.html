@@ -1,16 +1,27 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Movie Blocks</title>
   <style>
-    .movie-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    body {
+      background-color: #111;
+      color: white;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      color: #ffcc00;
       margin-top: 20px;
+      text-align: center;
+    }
+
+    .movie-container {
+      display: grid;
+      grid-template-rows: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
     }
 
     .movie-block {
@@ -18,6 +29,7 @@
       padding: 10px;
       border-radius: 8px;
       background-color: white;
+      color: black;
       width: 260px;
       height: 420px;
       text-align: center;
@@ -82,7 +94,7 @@
 </head>
 <body>
 
-  <h2 style="text-align: center;">Movie Scroll</h2>
+  <h2>Movie Scroll</h2>
 
   <div class="movie-container">
 
@@ -90,35 +102,35 @@
       <p>Moana 2</p>
       <label for="movie1"><img src="moana.jpg" alt="Moana 2"></label>
       <input type="checkbox" id="movie1">
-      <div class="desc">Moana sets sail on a new adventure across uncharted seas to reconnect distant Polynesian islands. Guided by ancient legends, she confronts powerful elemental spirits and discovers secrets about her ancestors' navigational wisdom. Along the journey, she faces challenges that test her leadership, courage, and belief in her destiny. With vibrant visuals and soulful music, Moana 2 expands the themes of identity, unity, and environmental harmony.</div>
+      <div class="desc">Moana sets sail on a new adventure across uncharted seas to reconnect distant Polynesian islands...</div>
     </div>
 
     <div class="movie-block">
       <p>Zootopia 2</p>
       <label for="movie2"><img src="mov3.jpg" alt="Zootopia 2"></label>
       <input type="checkbox" id="movie2">
-      <div class="desc">Zootopia 2 returns to the bustling metropolis where Judy Hopps and Nick Wilde face a mysterious wave of predator disappearances. As tensions rise between species, the duo uncovers a deeper plot threatening the city's fragile harmony. With fresh characters and sharp humor, the film explores themes of unity, prejudice, and bravery while delivering a suspenseful, heartfelt story.</div>
+      <div class="desc">Zootopia 2 returns to the bustling metropolis where Judy Hopps and Nick Wilde face a mysterious wave...</div>
     </div>
 
     <div class="movie-block">
       <p>Jumanji</p>
       <label for="movie3"><img src="jurassic.webp" alt="Jumanji"></label>
       <input type="checkbox" id="movie3">
-      <div class="desc">Four teens are pulled into a jungle-themed video game, taking on adult avatar roles. To escape, they must survive wild environments, defeat enemies, and work as a team. Along the way, they confront their fears and grow stronger together. Jumanji is an action-filled, humorous film that blends virtual fantasy with real-world lessons of confidence, friendship, and teamwork.</div>
+      <div class="desc">Four teens are pulled into a jungle-themed video game, taking on adult avatar roles...</div>
     </div>
 
     <div class="movie-block">
       <p>Soul</p>
       <label for="movie4"><img src="mov2.avif" alt="Soul"></label>
       <input type="checkbox" id="movie4">
-      <div class="desc">Joe Gardner is a music teacher who lands his dream jazz gig, but an accident sends him to the "Great Before." There, he meets Soul 22 and rediscovers what makes life meaningful. Soul blends deep themes of purpose and passion with heartfelt moments and music, reminding viewers to cherish ordinary experiences and live fully in the present.</div>
+      <div class="desc">Joe Gardner is a music teacher who lands his dream jazz gig, but an accident sends him to the "Great Before."...</div>
     </div>
 
     <div class="movie-block">
       <p>Harold and the Purple Crayon</p>
       <label for="movie5"><img src="mov1.jpg" alt="Harold and the Purple Crayon"></label>
       <input type="checkbox" id="movie5">
-      <div class="desc">Harold uses his magical purple crayon to draw worlds of adventure. When lost in his creation, he must rely on his imagination and courage to return home. Along the way, he learns important lessons about creativity and responsibility. The film celebrates the wonder of childhood and the endless possibilities of artistic expression and self-belief.</div>
+      <div class="desc">Harold uses his magical purple crayon to draw worlds of adventure...</div>
     </div>
 
   </div>
@@ -130,5 +142,3 @@
 
 </body>
 </html>
-
-
