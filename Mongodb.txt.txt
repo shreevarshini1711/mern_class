@@ -1,0 +1,296 @@
+use KEC
+switched to db KEC
+db.createCollection("User")
+{ ok: 1 }
+db.user.insertOne({
+Name: "varshini",
+Email: "shreevarshiniv.23eie@kongu.edu",
+Age: "19",
+Dep: "EIE"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a26ba6a56471cff8c8e9a')
+}
+db.User.insertMany([])
+MongoInvalidArgumentError: Invalid BulkOperation, Batch cannot be empty
+db.User.insertMany([
+  {Name: "shree",}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2b986a56471cff8c8e9b')
+  }
+}
+db.User.insertMany([
+  {Name: "shree",
+   Age: "12",
+   Email:"shreevars@gmail.com",
+  Dep:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2c296a56471cff8c8e9c')
+  }
+}
+db.User.insertMany([
+  {Name: "shree",
+   Age: "12",
+   Email:"shreevars@gmail.com",
+  Dep:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2d8d6a56471cff8c8e9d')
+  }
+}
+db.User.insertMany([
+  {Name: "s",
+   Age: "12",
+   Email:"svars@gmail.com",
+  Dep:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e096a56471cff8c8e9e')
+  }
+}
+db.User.insertMany([
+  {Name: "a",
+   Age: "12",
+   Email:"as@gmail.com",
+  Dep:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e256a56471cff8c8e9f')
+  }
+}
+db.User.insertMany([
+  {Name: "sa",
+   Age: "12",
+   Email:"sa@gmail.com",
+  Dep:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e3b6a56471cff8c8ea0')
+  }
+}
+db.User.insertMany([
+  {Name: "sau",
+   Age: "12",
+   Email:"sau@gmail.com",
+  Dep:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e506a56471cff8c8ea1')
+  }
+}
+db.User.fing()
+TypeError: db.User.fing is not a function
+db.User.find()
+{
+  _id: ObjectId('685a2b986a56471cff8c8e9b'),
+  Name: 'shree'
+}
+{
+  _id: ObjectId('685a2c296a56471cff8c8e9c'),
+  Name: 'shree',
+  Age: '12',
+  Email: 'shreevars@gmail.com',
+  Dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2d8d6a56471cff8c8e9d'),
+  Name: 'shree',
+  Age: '12',
+  Email: 'shreevars@gmail.com',
+  Dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2e096a56471cff8c8e9e'),
+  Name: 's',
+  Age: '12',
+  Email: 'svars@gmail.com',
+  Dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2e256a56471cff8c8e9f'),
+  Name: 'a',
+  Age: '12',
+  Email: 'as@gmail.com',
+  Dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2e3b6a56471cff8c8ea0'),
+  Name: 'sa',
+  Age: '12',
+  Email: 'sa@gmail.com',
+  Dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2e506a56471cff8c8ea1'),
+  Name: 'sau',
+  Age: '12',
+  Email: 'sau@gmail.com',
+  Dep: 'EIE'
+}
+db.User.findOne()
+{
+  _id: ObjectId('685a2b986a56471cff8c8e9b'),
+  Name: 'shree'
+}
+db.User.({Name: "as"})
+SyntaxError: Unexpected token (1:8)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mUser[39m[33m.[39m({[33mName[39m[33m:[39m [32m"as"[39m})
+ [90m   |[39m         [31m[1m^[22m[39m[0m
+db.User.find({Name: "a"})
+{
+  _id: ObjectId('685a2e256a56471cff8c8e9f'),
+  Name: 'a',
+  Age: '12',
+  Email: 'as@gmail.com',
+  Dep: 'EIE'
+}
+db.User.updateOne({Name: "sa"},{$set:{Name: "sam"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({Name:"sam"})
+{
+  _id: ObjectId('685a2e3b6a56471cff8c8ea0'),
+  Name: 'sam',
+  Age: '12',
+  Email: 'sa@gmail.com',
+  Dep: 'EIE'
+}
+db.User.updateMany({},{$set: {phone:''}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+db.User.find(phone: )
+SyntaxError: Unexpected token, expected "," (1:18)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mUser[39m[33m.[39mfind(phone[33m:[39m )
+ [90m   |[39m                   [31m[1m^[22m[39m[0m
+db.User.find({phone:''})
+{
+  _id: ObjectId('685a2b986a56471cff8c8e9b'),
+  Name: 'shree',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2c296a56471cff8c8e9c'),
+  Name: 'shree',
+  Age: '12',
+  Email: 'shreevars@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d8d6a56471cff8c8e9d'),
+  Name: 'shree',
+  Age: '12',
+  Email: 'shreevars@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2e096a56471cff8c8e9e'),
+  Name: 's',
+  Age: '12',
+  Email: 'svars@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2e256a56471cff8c8e9f'),
+  Name: 'a',
+  Age: '12',
+  Email: 'as@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2e3b6a56471cff8c8ea0'),
+  Name: 'sam',
+  Age: '12',
+  Email: 'sa@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2e506a56471cff8c8ea1'),
+  Name: 'sau',
+  Age: '12',
+  Email: 'sau@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+db.User.find().sort({Name:1})
+{
+  _id: ObjectId('685a2e256a56471cff8c8e9f'),
+  Name: 'a',
+  Age: '12',
+  Email: 'as@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2e096a56471cff8c8e9e'),
+  Name: 's',
+  Age: '12',
+  Email: 'svars@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2e3b6a56471cff8c8ea0'),
+  Name: 'sam',
+  Age: '12',
+  Email: 'sa@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2e506a56471cff8c8ea1'),
+  Name: 'sau',
+  Age: '12',
+  Email: 'sau@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2b986a56471cff8c8e9b'),
+  Name: 'shree',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2c296a56471cff8c8e9c'),
+  Name: 'shree',
+  Age: '12',
+  Email: 'shreevars@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d8d6a56471cff8c8e9d'),
+  Name: 'shree',
+  Age: '12',
+  Email: 'shreevars@gmail.com',
+  Dep: 'EIE',
+  phone: ''
+}
+KEC
+
+
